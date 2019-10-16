@@ -1,16 +1,19 @@
 #include<time.h>
 #include<stdio.h>
+#include<stdlib.h>
 
-struct guitar {char *model; int year;};
+struct guitar {
+    char *model; 
+    int year;
+};
 
 
-struct guitar return_one(struct guitar *guitars){
+struct guitar return_one(struct guitar *guitars, int length){
     srand(time(NULL));
-    // int length = sizeof guitars / sizeof (*guitars);
-    int array_len = sizeof(guitars);
-    // int struct_len = sizeof (*guitars);
-    printf("Array: %d\n", array_len);
-    // printf("Struct: %d\n", struct_len);
-    // printf("Length: %d\n", length);
-    return;
+    int i = 0;
+    // for(i; i < length; i++){
+    //     printf("%s\t%d\n", (guitars + i)->model, (guitars + i)->year);
+    // }
+    struct guitar chosen = *(guitars + rand());
+    return chosen;
 }
