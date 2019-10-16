@@ -31,6 +31,8 @@ int main(){
 
   struct guitar guitars_array[] = {gib_les_paul, stratocaster, prs_custom24, telecaster, telecaster2};
 
-  return_one(guitars_array, n);
+  struct guitar chosen = return_one(guitars_array, n);
+  printf("Model: \t%s\n", chosen.model);
+  printf("Year: \t%d\n", chosen.year);
   return 0;
 }
