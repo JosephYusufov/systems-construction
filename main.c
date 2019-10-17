@@ -31,8 +31,30 @@ int main(){
 
   struct guitar guitars_array[] = {gib_les_paul, stratocaster, prs_custom24, telecaster, telecaster2};
 
+  /******************** 
+  Test return_one() and print_guitar()
+  ********************/
+  printf("Testing random guitar picker:\n");
   struct guitar chosen = return_one(guitars_array, n);
-  printf("Model: \t%s\n", chosen.model);
-  printf("Year: \t%d\n", chosen.year);
+  print_guitar(chosen);
+  printf("--------------------\n");
+
+  /******************** 
+  Test modify_guitar() and print_guitar()
+  ********************/
+  printf("Testing guitar modifier:\nExpected results: {\"Fender Stratocaster\", 1954} => {\"Acoustic\", 1900}\n");
+
+  // Print original
+  printf("\t[original]\n");
+  print_guitar(stratocaster);
+
+  // Modify original
+  struct guitar *p_stratocaster = &stratocaster;
+  modify_guitar(p_stratocaster, "Acoustic", 1900);
+
+  // Print modified original
+  printf("\t[modified]\n");
+  print_guitar(stratocaster);
+
   return 0;
 }
