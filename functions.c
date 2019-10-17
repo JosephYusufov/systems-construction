@@ -16,7 +16,6 @@ return_one()
     - NOTE: Function returns a struct, not a pointer to a struct
 */
 struct guitar return_one(struct guitar *guitars, int length){
-    srand(time(NULL));
     int random = (int)(((double)(rand()) / (double)INT_MAX) * ((double)length));
     int i = 0;
     /*********** DEBUGGING CODE **********

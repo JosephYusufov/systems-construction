@@ -3,6 +3,7 @@
 #include "functions.h"
 
 int main(){
+  srand(time(NULL));
 
   struct guitar gib_les_paul;
   gib_les_paul.model = "Les Paul";
@@ -34,9 +35,12 @@ int main(){
   /******************** 
   Test return_one() and print_guitar()
   ********************/
-  printf("Testing random guitar picker:\n");
-  struct guitar chosen = return_one(guitars_array, n);
-  print_guitar(chosen);
+  printf("Testing random guitar picker [5 times]:\n");
+  print_guitar(return_one(guitars_array, n));
+  print_guitar(return_one(guitars_array, n));
+  print_guitar(return_one(guitars_array, n));
+  print_guitar(return_one(guitars_array, n));
+  print_guitar(return_one(guitars_array, n));
   printf("--------------------\n");
 
   /******************** 
